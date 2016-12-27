@@ -138,17 +138,7 @@ try {
 DBHelper dbHelper = new DBHelper(this.getApplicationContext());
 newDB = dbHelper.getWritableDatabase();
 Cursor c = newDB.rawQuery("SELECT * FROM " +
-tableName" ,null);
-
-if (c != null ) {
-if (c.moveToFirst()) {
-do {
-String firstName = c.getString(c.getColumnIndex("FirstName"));
-int age = c.getInt(c.getColumnIndex("Age"));
-results.add("Name: " + firstName + ",Age: " + age);
-}while (c.moveToNext());
-}
-}
+tableName" ,null); 
 } catch (SQLiteException se ) {
 Log.e(getClass().getSimpleName(), "Could not create or Open the database");
 } finally {
